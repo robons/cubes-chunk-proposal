@@ -1,0 +1,18 @@
+{
+    "@context": "http://www.w3.org/ns/csvw",
+    "@id": "http://gss-data.org.uk/trade/data/hmrc-ots#dataset",
+    "tables": [
+        {
+            "url": "Q3-2020/Q3-2020.csv",
+            "tableSchema": "Q3-2020/Q3-2020.table.json"
+        },
+        {
+            "url": "Q2-2020/Q2-2020.csv",
+            "tableSchema": "Q2-2020/Q2-2020.table.json"
+        }
+    ],
+    "rdfs:label": "HMRC Overseas Trade Statistics - Combined Nomenclature 8",
+    "dc:title": "HMRC Overseas Trade Statistics - Combined Nomenclature 8",
+    "rdfs:comment": "HMRC OTS from the perspective of the Combined Nomenclature 8 codelist.",
+    "dc:description": "HMRC OTS from the perspective of the Combined Nomenclature 8 codelist... more information here."
+}

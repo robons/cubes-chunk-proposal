@@ -1,0 +1,42 @@
+{
+    "id": "hmrc-ots",
+    "baseUri": "http://gss-data.org.uk/trade/",
+    "publisher": "HM Revenue & Customs",
+    "landingPage": "https://www.uktradeinfo.com/trade-data/overseas/",
+    "published": "2018-03-08",
+    "license": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+    "families": [
+        "Trade"
+    ],
+    "keywords": [
+        "Overseas",
+        "Balance of Payments"
+    ],
+    "contactUri": "mailto:hmrc@hmrc.gov.uk",
+    "cubes": {
+        "hmrc-ots-cn8": {
+            "title": "HMRC Overseas Trade Statistics - Combined Nomenclature 8",
+            "summary": "HMRC OTS from the perspective of the Combined Nomenclature 8 codelist.",
+            "description": "HMRC OTS from the perspective of the Combined Nomenclature 8 codelist... more information here."
+        },
+        "hmrc-ots-sitc": {
+            "title": "HMRC Overseas Trade Statistics - SITCv4",
+            "summary": "HMRC OTS from the perspective of the SITCv4 codelist.",
+            "description": "HMRC OTS from the perspective of the SITCv4 codelist... more information here."
+        }
+    },
+    "columns": { },
+    "extract": {
+        "source": "CSV",
+        "stage": "Prioritized"
+    },
+    "transform": {
+        "stage": [
+            "Priority"
+        ],
+        "airtable": "recUav7dFdgezEsgJ",
+        "main_issue": 114
+    },
+    "sizingNotes": "1 CSV, stage 1 trasnsform required however discussion will be required to determine dimensions etc. as this is not a statisical dataset.",
+    "notes": "Guidance to using the tool can be found here:\nhttps://www.gov.uk/guidance/using-the-trade-tariff-tool-to-find-a-commodity-code"
+}

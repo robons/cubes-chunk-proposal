@@ -1,0 +1,8 @@
+{
+    "@context": "http://www.w3.org/ns/csvw",
+    "url": "Q3-2020.csv",
+    "@id": "http://gss-data.org.uk/trade/data/hmrc-ots#chunk/Q3-2020",
+    "tableSchema": "Q3-2020.table.json",
+    "rdfs:label": "Q3-2020",
+    "dc:title": "Q3-2020"
+}
