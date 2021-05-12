@@ -1,9 +1,8 @@
-# Generate CSV boi
+# New Cubes Ideas
 
-Key points:
+See [example.py](./example.py) for a practical example of what this kind of tool could do. I've used it to test a few ideas out.
 
-* Don't need to specify graph URIs
-* Trig file doesn't need to be generated anymore (catalog metadata contained withing the CSV-W file)
+## Pseudo-Transformation
 
 ```python
 from pathlib import Path
