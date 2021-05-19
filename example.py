@@ -16,14 +16,29 @@ hmrc_ots_cn8_cube = CsvCube(hmrc_ots_cn8_config)
 
 hmrc_ots_cn8_cube.set_data(pd.DataFrame(
     {
-        "A": [1, 1, 1],
-        "B": [2, 2, 2]
+        "flow_type": [1, 1, 1],
+        "country_id": [2, 2, 2],
+        "sitc_id": [3, 3, 3],
+        "cn8_id": [4, 4, 4],
+        "port": [5, 5, 5],
+        "period": [6, 6, 6],
+        "measure_type": ["net-mass", "net-mass", "monetary-value"],
+        "unit_type": [8, 8, 8],
+        "value": [9.0, 9.0, 9.0]
     }
 ), "Q2-2020")
 
 hmrc_ots_cn8_cube.set_data(pd.DataFrame({
-    "A": [3, 3],
-    "B": [4, 4]
-}), chunk_name="Q3-2020")
+        "flow_type": [-1, -1, -1],
+        "country_id": [-2, -2, -2],
+        "sitc_id": [-3, -3, -3],
+        "cn8_id": [-4, -4, -4],
+        "port": [-5, -5, -5],
+        "period": [-6, -6, -6],
+        "measure_type": ["net-mass", "net-mass", "monetary-value"],
+        "unit_type": [-8, -8, -8],
+        "value": [-9.0, -9.0, -9.0]
+    }
+), chunk_name="Q3-2020")
 
 csvwtools.cube_to_csvw(hmrc_ots_cn8_cube, Path(f"out/{hmrc_ots_cn8_cube.config.dataset_identifier}.csv-metadata.json"))

@@ -3,12 +3,12 @@
     "@id": "http://gss-data.org.uk/trade/data/hmrc-ots#dataset",
     "tables": [
         {
-            "url": "Q3-2020/Q3-2020.csv",
-            "tableSchema": "Q3-2020/Q3-2020.table.json"
-        },
-        {
             "url": "Q2-2020/Q2-2020.csv",
             "tableSchema": "Q2-2020/Q2-2020.table.json"
+        },
+        {
+            "url": "Q3-2020/Q3-2020.csv",
+            "tableSchema": "Q3-2020/Q3-2020.table.json"
         }
     ],
     "rdfs:label": "HMRC Overseas Trade Statistics - Combined Nomenclature 8",

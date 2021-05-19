@@ -1,3 +1,69 @@
 {
-    "columns": []
+    "columns": [
+        {
+            "titles": "flow_type",
+            "name": "flow_type",
+            "datatype": "string",
+            "propertyUrl": "http://gss-data.org.uk/trade/data/hmrc-ots#dimension/flow_type",
+            "valueUrl": "http://gss-data.org.uk/def/trade/concept/flow-directions/{+flow_type}"
+        },
+        {
+            "titles": "country_id",
+            "name": "country_id",
+            "datatype": "string",
+            "propertyUrl": "http://gss-data.org.uk/trade/data/hmrc-ots#dimension/country_id",
+            "valueUrl": "https://api.uktradeinfo.com/Country/{+country_id}"
+        },
+        {
+            "titles": "sitc_id",
+            "name": "sitc_id",
+            "datatype": "string",
+            "propertyUrl": "http://gss-data.org.uk/trade/data/hmrc-ots#dimension/sitc_id",
+            "valueUrl": "http://gss-data.org.uk/data/gss_data/trade/HMRC-overseas-trade-statistics#concept/sitc/{+sitc_id}"
+        },
+        {
+            "titles": "cn8_id",
+            "name": "cn8_id",
+            "datatype": "string",
+            "propertyUrl": "http://gss-data.org.uk/trade/data/hmrc-ots#dimension/cn8_id",
+            "valueUrl": "http://gss-data.org.uk/data/gss_data/trade/HMRC-overseas-trade-statistics#concept/cn8/{+cn8_id}"
+        },
+        {
+            "titles": "port",
+            "name": "port",
+            "datatype": "string",
+            "propertyUrl": "http://gss-data.org.uk/trade/data/hmrc-ots#dimension/port",
+            "valueUrl": "https://api.uktradeinfo.com/Port/{+port}"
+        },
+        {
+            "titles": "period",
+            "name": "period",
+            "datatype": "string",
+            "propertyUrl": "http://gss-data.org.uk/trade/data/hmrc-ots#dimension/period",
+            "valueUrl": "http://reference.data.gov.uk/id/month/{+period}"
+        },
+        {
+            "titles": "measure_type",
+            "name": "measure_type",
+            "datatype": {
+                "base": "string",
+                "format": "^(monetary-value|net-mass)$"
+            },
+            "propertyUrl": "http://purl.org/linked-data/cube#measureType",
+            "valueUrl": "http://gss-data.org.uk/def/trade/measure/{measure_type}"
+        },
+        {
+            "titles": "unit_type",
+            "name": "unit_type",
+            "datatype": "string",
+            "propertyUrl": "http://purl.org/linked-data/sdmx/2009/attribute#unitMeasure",
+            "valueUrl": "{+unit_type}"
+        },
+        {
+            "titles": "value",
+            "name": "value",
+            "datatype": "decimal",
+            "propertyUrl": "http://gss-data.org.uk/def/trade/measure/{measure_type}"
+        }
+    ]
 }

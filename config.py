@@ -7,6 +7,8 @@ import copy
 from dateutil import parser
 
 
+from columns import CsvColumn, columns_from_info_json
+
 URI = NewType('URI', str)
 
 
@@ -80,14 +82,17 @@ class CsvCubeConfig:
     catalog_metadata: CsvCubeCatalogMetadata
 
     # Leave the columns nightmare for now.
-    columns: List[dict]
+    columns: Dict[str, CsvColumn]
 
-    def __init__(self, d: dict):
-        self.catalog_metadata = CsvCubeCatalogMetadata(d)
+    @staticmethod
+    def from_info_json_dict(d: Dict):
+        config = CsvCubeConfig()
+        config.catalog_metadata = CsvCubeCatalogMetadata(d)
 
-        self.dataset_identifier = get_from_dict_ensure_exists(d, "id")
-        self.base_uri = d.get("baseUri", "http://gss-data.org.uk/")
-        self.columns = d.get("columns", [])
+        config.dataset_identifier = get_from_dict_ensure_exists(d, "id")
+        config.base_uri = d.get("baseUri", "http://gss-data.org.uk/")
+        config.columns = columns_from_info_json(d.get("columns", []))
+        return config
 
     @staticmethod
     def from_info_json(info_json: Path, cube_id: str):
@@ -97,8 +102,8 @@ class CsvCubeConfig:
         config = override_config_for_cube_id(config, cube_id)
         if config is None:
             raise Exception(f"Config not found for cube with id '{cube_id}'")
-       
-        return CsvCubeConfig(config)
+
+        return CsvCubeConfig.from_info_json_dict(config)
 
 
 class CsvCubeChunk:
