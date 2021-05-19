@@ -6,7 +6,8 @@ import re
 
 
 from config import CsvCube, CsvCubeChunk, URI, CsvCubeConfig
-from columns import CsvColumn, DimensionColumn, MeasureTypeColumn, AttributeColumn, ObservedValueColumn
+from columns import CsvColumn, DimensionColumn, MeasureTypeColumn, AttributeColumn, ObservedValueColumn, \
+    SuppressedColumn
 
 
 def cube_to_csvw(cube: CsvCube, metadata_file_out: Path, suppress_dsd: bool = False):
@@ -59,6 +60,9 @@ def _get_col_definition(col_title: str, cube_config: CsvCubeConfig, dataset_base
         csvw_col_def["propertyUrl"] = col_def.measure_uri
         if col_def.datatype is not None:
             csvw_col_def["datatype"] = col_def.datatype
+
+    if isinstance(col_def, SuppressedColumn):
+        csvw_col_def["suppressOutput"] = True
 
     return csvw_col_def
 
