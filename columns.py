@@ -168,7 +168,7 @@ def _get_column_for_metadata_config(col_name: str, col_config: Any) -> CsvColumn
             return ObservedValueColumn(col_name, measure, unit, datatype)
         else:
             raise Exception(f"Unmatched column definition: {col_config}")
-    elif isinstance(col_config, bool) and col_config:
+    elif isinstance(col_config, bool) and not col_config:
         return SuppressedColumn(col_name)
     else:
         # If not defined, treat it as a dimension.
